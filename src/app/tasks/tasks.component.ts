@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TaskComponent } from './task/task.component'; // Importing the TasksComponent
+import { TaskComponent } from './task/task.component'; // Importing the TaskComponent
 
 @Component({
   selector: 'app-tasks',
@@ -12,7 +12,7 @@ export class TasksComponent {
   @Input({required: true}) userId!: string; // Using ! to assert that id will be provided
   @Input({required: true}) name!: string;
 
- tasks = [
+tasks = [
     { id: 't1',
       userId: 'u1',
       title: 'Master Angular',
