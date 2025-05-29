@@ -1,4 +1,4 @@
-import { Component, Injectable, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TaskComponent } from './task/task.component'; // Importing the TaskComponent
 import { NewTaskComponent } from './new-task/new-task.component'; // Importing the NewTaskComponent
 import { type NewTaskData } from './task/task.model';
@@ -17,9 +17,9 @@ export class TasksComponent {
   @Input({required: true}) name!: string;
   isAddingTask= false;
 
-  constructor(private tasksService: TasksService) {}
-
-
+  constructor(private tasksService: TasksService) {
+    
+  }
 
   get selectedUserTasks() {
     return this.tasksService.getUserTasks(this.userId);
@@ -33,12 +33,8 @@ export class TasksComponent {
     this.isAddingTask = true;
   }
 
-  onCancelAddTask() {
+  onCloseAddTask() {
     this.isAddingTask = false;
-  }
-
-  onAddTask(taskData: NewTaskData) {
-   
- //   this.isAddingTask = false;
+ 
   }
 }
